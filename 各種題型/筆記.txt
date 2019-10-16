@@ -1,0 +1,44 @@
+scanf = cin
+printf = cout
+
+%d int
+%c character=(一個字)
+%f float
+%lf double
+%s string
+
+vim 文字編輯器
+:q 跳出
+:w 儲存
+i 開始打字 
+esc跳出打字
+  
+vim(或vi) 檔名.c
+gcc 檔名.c
+---------會出現a.out------------
+./a.out 跑程式
+
+
+
+cd "某個資料夾" 換到某個資料夾
+cd 跳到家目錄
+ls 列出資料夾的東西
+cd ..跳到上一層
+
+vim .vimrc 看設定
+
+行數gg 跳到那行
+:set nu 讓左邊出現數字
+
+#include <string.h> 
+->strlen(a) 回傳a裡面有幾個字 
+
+isupper(a)
+a是大寫->大於0整數
+a是小寫->0
+
+遞迴三要素
+1.初始條件
+2.函式列出來
+3.甚麼時候中斷
+                                                    
