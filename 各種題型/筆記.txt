@@ -41,4 +41,7 @@ a是小寫->0
 1.初始條件
 2.函式列出來
 3.甚麼時候中斷
-                                                    
+
+要加std::
+1.sort
+(由大排到小)bool abc(int i,int j){return i > j;}                                                
