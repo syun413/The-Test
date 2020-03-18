@@ -5,7 +5,7 @@ typedef struct ivjedoigjwiejfig
 	int x;
 	int y;
 }Point;
-typedef struct q
+typedef struct qgjioejiogjeiojgio
 {
 	int front;
 	int back;
