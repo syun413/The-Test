@@ -35,32 +35,33 @@ int bound(int x,int y)
 {
 	return (x >= 0 && y >= 0);
 }
-int bfs(char a[505][505],int w[505][505],int j,int i)
+int bfs(char a[505][505],int w[505][505],int i,int j)
 {
 	queue q;
 	Point p;
 	q.front = 0;
 	q.back = 0;
 	q.size = 0;
-	p.x = j;
-	p.y = i;
+	p.x = i;
+	p.y = j;
 	push(&q,p);
-	int counter;
+	int counter=0;
 	while(!empty(&q))
 	{
 		Point temp = pop(&q);
 		int x = temp.x;
 		int y = temp.y;
-		if(w[x][y] == 0)
+		if(w[x][y] == 0 )
 		{
 			counter++;
 			w[x][y] = 1;
 			int hor[] = {-1,1,0,0};
 			int ver[] = {0,0,-1,1};
 			for(int i = 0;i < 4;i++)
-				if(bound(x+hor[i],y+ver[i]) && a[x+hor[i]][y+ver[i]] == 'J')
+				if(bound(x+ver[i],y+hor[i]) && a[x+ver[i]][y+hor[i]] == 'J')
 				{
-					push(&q,{x+hor[i],y+ver[i]});
+                    Point temp = {x+ver[i],y+hor[i]};
+					push(&q,temp);
 				}	
 		}
 	}
@@ -69,14 +70,14 @@ int bfs(char a[505][505],int w[505][505],int j,int i)
 int main()
 {
 int m,n;
-scanf("%d %d",&n,&m);
+scanf("%d %d",&m,&n);
 getchar();
 char a[505][505];
 int w[505][505] = {{0}};
-for(int i = 0;i <= m;i++)
-	for(int j = 0;j < n;j++)
+for(int i = 0;i < m;i++)
+	for(int j = 0;j <= n;j++)
 	{
-		scanf("%c",&a[j][i]);
+		scanf("%c",&a[i][j]);
 
 	}
 int max = 0;
@@ -84,15 +85,16 @@ int sum = 0;
 for(int i = 0;i < m;i++)
 	for(int j = 0;j < n;j++)
 	{
-		if(w[j][i] == 1)
+		if(w[i][j] == 1)
 			continue;
-		if(a[j][i] == 'J')
+		if(a[i][j] == 'J')
 			{
 				 int t;
-				 t = bfs(a,w,j,i);
+				 t = bfs(a,w,i,j);
 				 if(t >= max)
 				 	max = t;
 				 sum++;
+                 printf("sum:%d i:%d j:%d\n",sum,i,j);
 			}		
 	}
 	printf("%d %d",sum,max);
