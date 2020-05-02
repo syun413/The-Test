@@ -6,11 +6,11 @@ int main()
 	while(scanf("%d",&n) != EOF)
 		{
 			if(n % 400 == 0)
-				printf("¶|¦~");
+				printf("¶|¦~\n");
 			else if(n % 4 == 0 && n % 100 != 0)
-				printf("¶|¦~");
+				printf("¶|¦~\n");
 			else 
-				printf("¥­¦~");
+				printf("¥­¦~\n");
 		}
 	return 0;
 }
